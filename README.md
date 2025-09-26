@@ -145,8 +145,6 @@ public class OrderProcessingFunctions
 - Choose your own storage backend (SQLite, InMemory, or custom)
 - Deploy using standard .NET hosting instead of Azure Functions
 
-> **Real user feedback:** *"Migration took us 2 hours instead of 2 months. Same code, better control, massive cost savings!"*
-
 ### Ready to Break Free?
 
 [View complete Azure migration example →](examples/AzureCompatibilityExample.cs) | [Azure Adapter Documentation →](src/Asynkron.DurableFunctions.AzureAdapter/README.md)
