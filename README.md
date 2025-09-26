@@ -11,14 +11,11 @@ on-premises, Docker, Kubernetes, or any cloud provider. Inspired by the concepts
 
 ## Why Asynkron.DurableFunctions?
 
-* **Independent design** - Our own API, our own ideas, no vendor dependency
-* **CallFunction as the core** - Clean, simple function invocation pattern
-* **Lightning fast** - No heavyweight runtime overhead
-* **Multiple storage backends** - In-memory, SQLite, or bring your own
-* **Rich orchestration patterns** - Powerful workflow capabilities
-* **Easy debugging** - Debug locally with standard .NET tooling
-* **Lightweight** - Minimal dependencies, maximum performance
-* **Production ready** - Battle-tested orchestration patterns
+* ⭐ **Lightning fast** - No heavyweight runtime overhead
+* ⭐ **Multiple storage backends** - In-memory, SQLite, or bring your own
+* ⭐ **Rich orchestration patterns** - Powerful workflow capabilities
+* ⭐ **Easy debugging** - Debug locally with standard .NET tooling
+* ⭐ **Lightweight** - Minimal dependencies, maximum performance
 
 ## Quick Start
 
