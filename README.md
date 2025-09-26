@@ -11,11 +11,11 @@ on-premises, Docker, Kubernetes, or any cloud provider. No vendor lock-in, just 
 
 ## Why Asynkron.DurableFunctions?
 
-* **Lightning fast** - No heavyweight runtime overhead
-* **Multiple storage backends** - In-memory, SQLite, or bring your own
-* **Rich orchestration patterns** - Powerful workflow capabilities
-* **Easy debugging** - Debug locally with standard .NET tooling
-* **Lightweight** - Minimal dependencies, maximum performance
+* ⭐ **Lightning fast** - No heavyweight runtime overhead
+* ⭐ **Multiple storage backends** - In-memory, SQLite, or bring your own
+* ⭐ **Rich orchestration patterns** - Powerful workflow capabilities
+* ⭐ **Easy debugging** - Debug locally with standard .NET tooling
+* ⭐ **Lightweight** - Minimal dependencies, maximum performance
 
 ## Quick Start
 
