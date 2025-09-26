@@ -4,11 +4,10 @@
 [![NuGet](https://img.shields.io/nuget/v/Asynkron.DurableFunctions.svg)](https://www.nuget.org/packages/Asynkron.DurableFunctions/)
 [![Downloads](https://img.shields.io/nuget/dt/Asynkron.DurableFunctions.svg)](https://www.nuget.org/packages/Asynkron.DurableFunctions/)
 
-> **A powerful durable orchestration framework with our own API design!**
+> **A powerful durable orchestration framework**
 
 **Asynkron.DurableFunctions** is an independent durable orchestration framework that runs on any .NET environment -
-on-premises, Docker, Kubernetes, or any cloud provider. While inspired by the concepts of Azure Durable Functions, this
-is **our own project with our own API design**. No vendor lock-in, just pure orchestration power!
+on-premises, Docker, Kubernetes, or any cloud provider. Inspired by the concepts of Azure Durable Functions, No vendor lock-in, just pure orchestration power!
 
 ## Why Asynkron.DurableFunctions?
 
@@ -441,30 +440,6 @@ runtime.RegisterOrchestratorFunction<OrderRequest, OrderResult>("ProcessTypedOrd
 });
 ```
 
-## Our Independent Approach
-
-**Asynkron.DurableFunctions** is inspired by orchestration concepts from various sources, but this is **our own
-independent project** with **our own API design**.
-
-### Key Principles:
-
-- **CallFunction is the core** - Simple, clean function invocation
-- **No vendor dependency** - Runs anywhere .NET runs
-- **Our design decisions** - API designed for clarity and power
-- **Community-driven** - Open to ideas and contributions
-
-While the orchestration patterns are similar to other durable function frameworks, the API and implementation are
-completely independent.
-
-## Use Cases
-
-### Business Processes
-
-- Order processing workflows
-- Approval chains
-- Document processing pipelines
-- Customer onboarding flows
-
 ### Data Processing
 
 - ETL pipelines with error handling
@@ -488,7 +463,7 @@ completely independent.
 
 ## Getting Started Examples
 
-### 1. Hello World (60 seconds)
+### 1. Hello World
 
 ```csharp
 using Asynkron.DurableFunctions;
@@ -637,52 +612,13 @@ app.Run();
 * **Lightweight**: Minimal overhead compared to Azure Functions runtime
 * **Fast startup**: No cold start issues
 * **Horizontally scalable**: Run multiple instances with shared storage
-* **Efficient storage**: Optimized state serialization
 * **Automatic cleanup**: Completed orchestrations are automatically cleaned up
 
 ## Community & Support
 
 * **Documentation**: Comprehensive guides and examples
-
-- 💬 **Community**: Active discussions and support
-
 * **Issues**: Report bugs and request features on GitHub
 * **Samples**: Rich sample repository with real-world scenarios
-
-## What People Are Saying
-
-> *"Finally! I can use durable functions in my on-premises applications without Azure!"* - Happy Developer
-
-> *"The migration from Azure Durable Functions was seamless. Same API, better control!"* - DevOps Engineer
-
-> *"Perfect for Kubernetes deployments. No vendor lock-in!"* - Cloud Architect
-
-## Development & Testing
-
-### Building the Project
-
-```bash
-dotnet build
-```
-
-### Running Tests
-
-```bash
-dotnet test
-```
-
-### Running Examples
-
-```bash
-cd examples
-dotnet run
-```
-
-### Creating NuGet Package
-
-```bash
-dotnet pack src/Asynkron.DurableFunctions/Asynkron.DurableFunctions.csproj --configuration Release --output ./artifacts
-```
 
 ---
 
@@ -690,10 +626,7 @@ dotnet pack src/Asynkron.DurableFunctions/Asynkron.DurableFunctions.csproj --con
 
 **🎉 Ready to break free from Azure lock-in?**
 
-**⭐ Star this repo** • **🍴 Fork it** • **📦 Use it in production**
-
-**[Get Started Now](#-quick-start)** • **[View Examples](#-rich-examples-gallery)** • *
-*[Migration Guide](#-azure-functions-migration-guide)**
+**⭐ Star this repo** • **📦 Use it in production**
 
 ---
 
