@@ -26,3 +26,7 @@
 /home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/obj/Debug/net8.0/Asynkron.DurableFunctions.AzureAdapter.dll
 /home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/obj/Debug/net8.0/refint/Asynkron.DurableFunctions.AzureAdapter.dll
 /home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/obj/Debug/net8.0/Asynkron.DurableFunctions.AzureAdapter.pdb
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/bin/Debug/net8.0/Asynkron.DurableFunctions.AzureAdapter.deps.json
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/bin/Debug/net8.0/Asynkron.DurableFunctions.AzureAdapter.dll
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/bin/Debug/net8.0/Asynkron.DurableFunctions.AzureAdapter.pdb
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/obj/Debug/net8.0/ref/Asynkron.DurableFunctions.AzureAdapter.dll

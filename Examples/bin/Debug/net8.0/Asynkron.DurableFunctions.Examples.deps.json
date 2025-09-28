@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Asynkron.DurableFunctions.Examples/1.0.0": {
         "dependencies": {
-          "Asynkron.DurableFunctions": "1.0.0",
+          "Asynkron.DurableFunctions": "0.0.3",
           "Asynkron.DurableFunctions.AzureAdapter": "1.0.0",
           "JetBrains.Annotations": "2025.2.2",
           "Microsoft.Extensions.Logging": "8.0.0",
@@ -20,6 +20,22 @@
         },
         "runtime": {
           "Asynkron.DurableFunctions.Examples.dll": {}
+        }
+      },
+      "Asynkron.DurableFunctions/0.0.3": {
+        "dependencies": {
+          "JetBrains.Annotations": "2025.2.2",
+          "Microsoft.Data.Sqlite": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging.Console": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Asynkron.DurableFunctions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Google.Protobuf/3.22.5": {
@@ -188,17 +204,6 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
-          }
-        }
-      },
-      "Npgsql/8.0.3": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/Npgsql.dll": {
-            "assemblyVersion": "8.0.3.0",
-            "fileVersion": "8.0.3.0"
           }
         }
       },
@@ -448,27 +453,9 @@
           "System.Text.Encodings.Web": "8.0.0"
         }
       },
-      "Asynkron.DurableFunctions/1.0.0": {
-        "dependencies": {
-          "JetBrains.Annotations": "2025.2.2",
-          "Microsoft.Data.Sqlite": "8.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging.Console": "8.0.0",
-          "Npgsql": "8.0.3",
-          "System.Diagnostics.DiagnosticSource": "8.0.0"
-        },
-        "runtime": {
-          "Asynkron.DurableFunctions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Asynkron.DurableFunctions.AzureAdapter/1.0.0": {
         "dependencies": {
-          "Asynkron.DurableFunctions": "1.0.0",
+          "Asynkron.DurableFunctions": "0.0.3",
           "JetBrains.Annotations": "2025.2.2",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         },
@@ -486,6 +473,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Asynkron.DurableFunctions/0.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xmPswezAYlsNRCwHpjbVTbo/VMWWIpr6YAtpmvDr0avkKUxdeVIL+OxAebyCpiLWyWBdYBxCnH38EpVQ/nTs8Q==",
+      "path": "asynkron.durablefunctions/0.0.3",
+      "hashPath": "asynkron.durablefunctions.0.0.3.nupkg.sha512"
     },
     "Google.Protobuf/3.22.5": {
       "type": "package",
@@ -655,13 +649,6 @@
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
-    "Npgsql/8.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6WEmzsQJCZAlUG1pThKg/RmeF6V+I0DmBBBE/8YzpRtEzhyZzKcK7ulMANDm5CkxrALBEC8H+5plxHWtIL7xnA==",
-      "path": "npgsql/8.0.3",
-      "hashPath": "npgsql.8.0.3.nupkg.sha512"
-    },
     "OpenTelemetry/1.7.0": {
       "type": "package",
       "serviceable": true,
@@ -780,11 +767,6 @@
       "sha512": "sha512-OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
       "path": "system.text.json/8.0.0",
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
-    },
-    "Asynkron.DurableFunctions/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Asynkron.DurableFunctions.AzureAdapter/1.0.0": {
       "type": "project",

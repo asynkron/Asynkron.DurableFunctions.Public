@@ -44,6 +44,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Asynkron.DurableFunctions": {
+              "target": "Package",
+              "version": "[0.0.3, )"
+            },
             "JetBrains.Annotations": {
               "target": "Package",
               "version": "[2025.2.2, )"

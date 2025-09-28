@@ -56,8 +56,9 @@ internal class Program
 
             Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-            // Run the chaos engineering example
-            await ChaosEngineeringExample.RunAsync();
+            // Note: Some examples are excluded when building with NuGet references
+            // as they use features not available in the public NuGet package
+            // await ChaosEngineeringExample.RunAsync();
         }
         catch (Exception ex)
         {
@@ -80,12 +81,16 @@ internal class Program
         {
             case "postgresql":
             case "postgresql-api":
-                Console.WriteLine("🐘 Running PostgreSQL Web API Example");
-                await WebApiPostgreSqlExample.RunAsync(args.Skip(1).ToArray());
+                Console.WriteLine("🐘 PostgreSQL Web API Example not available with NuGet references");
+                Console.WriteLine("💡 This example uses features not available in the public NuGet package");
+                return true;
+                // await WebApiPostgreSqlExample.RunAsync(args.Skip(1).ToArray());
                 return true;
             case "postgresql-cli":
-                Console.WriteLine("🐘 Running PostgreSQL Console Example");
-                await PostgreSqlExample.RunAsync();
+                Console.WriteLine("🐘 PostgreSQL Console Example not available with NuGet references");
+                Console.WriteLine("💡 This example uses features not available in the public NuGet package");
+                return true;
+                // await PostgreSqlExample.RunAsync();
                 return true;
             case "otel":
             case "otel-collector":
