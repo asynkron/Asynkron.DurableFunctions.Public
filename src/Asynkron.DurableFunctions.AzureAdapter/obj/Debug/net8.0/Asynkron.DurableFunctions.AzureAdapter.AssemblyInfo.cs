@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("Azure Durable Functions compatibility layer for Asynkron.DurableFunctions. Provid" +
     "es Azure-compatible attributes and interfaces for drop-in replacement scenarios."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38db55c38d85552150505f2ff85dde608588050f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c007048d36a067ced97c155cbfcda8d0c39f01cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Asynkron.DurableFunctions.AzureAdapter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Asynkron.DurableFunctions.AzureAdapter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -60,3 +60,6 @@
 /Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions/examples/bin/Debug/net8.0/OpenTelemetry.Api.ProviderBuilderExtensions.dll
 /Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions/examples/bin/Debug/net8.0/OpenTelemetry.Exporter.OpenTelemetryProtocol.dll
 /Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions/examples/bin/Debug/net8.0/OpenTelemetry.Extensions.Hosting.dll
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/obj/Debug/net8.0/Asynkron.DurableFunctions.Examples.dll
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/obj/Debug/net8.0/refint/Asynkron.DurableFunctions.Examples.dll
+/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/obj/Debug/net8.0/Asynkron.DurableFunctions.Examples.pdb

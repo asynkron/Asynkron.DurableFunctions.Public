@@ -1909,33 +1909,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/rogerjohansson/.nuget/packages/": {}
+    "/home/runner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj",
+      "projectUniqueName": "/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/Asynkron.DurableFunctions.Examples.csproj",
       "projectName": "Asynkron.DurableFunctions.Examples",
-      "projectPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj",
-      "packagesPath": "/Users/rogerjohansson/.nuget/packages/",
-      "outputPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/obj/",
+      "projectPath": "/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/Asynkron.DurableFunctions.Examples.csproj",
+      "packagesPath": "/home/runner/.nuget/packages/",
+      "outputPath": "/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/Examples/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/rogerjohansson/.nuget/NuGet/NuGet.Config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj": {
-              "projectPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj"
+            "/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj": {
+              "projectPath": "/home/runner/work/Asynkron.DurableFunctions.Public/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj"
             }
           }
         }
@@ -1996,20 +1995,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2018,7 +2003,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
