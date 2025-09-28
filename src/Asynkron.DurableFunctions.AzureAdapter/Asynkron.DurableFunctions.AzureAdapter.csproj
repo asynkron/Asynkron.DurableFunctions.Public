@@ -30,7 +30,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="../Asynkron.DurableFunctions/Asynkron.DurableFunctions.csproj" />
+        <PackageReference Include="Asynkron.DurableFunctions" Version="0.0.3" />
     </ItemGroup>
 
     <ItemGroup>

@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\Asynkron.DurableFunctions\Asynkron.DurableFunctions.csproj"/>
+        <PackageReference Include="Asynkron.DurableFunctions" Version="0.0.3" />
         <ProjectReference Include="..\src\Asynkron.DurableFunctions.AzureAdapter\Asynkron.DurableFunctions.AzureAdapter.csproj"/>
     </ItemGroup>
 
@@ -24,6 +24,16 @@
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Exclude examples that use features not available in the public NuGet package -->
+        <Compile Remove="ChaosEngineeringExample.cs" />
+        <Compile Remove="FullFeaturedWebAppExample.cs" />
+        <Compile Remove="MetricsExample.cs" />
+        <Compile Remove="WebApiExample.cs" />
+        <Compile Remove="WebApiPostgreSqlExample.cs" />
+        <Compile Remove="PostgreSqlExample.cs" />
     </ItemGroup>
 
 </Project>
