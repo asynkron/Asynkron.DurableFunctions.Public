@@ -30,7 +30,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Asynkron.DurableFunctions" Version="0.0.3" />
+        <PackageReference Include="Asynkron.DurableFunctions" Version="0.0.5" />
     </ItemGroup>
 
     <ItemGroup>
