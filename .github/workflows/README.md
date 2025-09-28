@@ -1,90 +1,76 @@
 # GitHub Actions Workflows
 
-This directory contains automated CI/CD workflows for the Asynkron.DurableFunctions.Public repository.
+This directory contains the automated CI/CD workflow for the Asynkron.DurableFunctions.Public repository.
 
-## Workflows
+## Workflow
 
-### 🔨 [`build.yml`](build.yml) - Main Build Workflow
+### 🔨 [`build.yml`](build.yml) - Build and Publish Workflow
 
 **Triggers:** Push to `main`/`develop`, Pull Requests, Manual dispatch
 
-**Purpose:** Comprehensive build and test across multiple platforms
+**Purpose:** Simple, reliable build, test, and publish pipeline
 
 **Jobs:**
-- **Multi-platform Build Matrix**: Tests on Ubuntu, Windows, and macOS
-- **Multi-configuration**: Builds both Debug and Release configurations  
-- **Solution-wide Testing**: Runs all tests in the solution
+- **Build and Test**: Runs on Ubuntu with .NET 8.0
+- **Package Creation**: Creates NuGet packages for distribution  
 - **Examples Validation**: Smoke tests the Examples project execution
+- **NuGet Publishing**: Publishes packages to NuGet.org on main branch pushes
 
-**Artifacts:** NuGet packages (on main branch only)
+**Key Features:**
+- Single OS target (Ubuntu) for simplicity and speed
+- Release configuration for consistent builds
+- Automatic NuGet publishing when NUGET_API_KEY secret is configured
+- Package artifacts with 30-day retention for review
 
-### ⚡ [`azure-adapter.yml`](azure-adapter.yml) - Azure Adapter Focused Build
+## Status Badge
 
-**Triggers:** 
-- Changes to `src/Asynkron.DurableFunctions.AzureAdapter/**`
-- Changes to this workflow file
-- Manual dispatch
+The README.md includes a status badge that links to the workflow:
 
-**Purpose:** Specialized validation for the Azure Adapter package
-
-**Jobs:**
-1. **Build AzureAdapter**: 
-   - Builds in Debug and Release configurations
-   - Generates and validates NuGet packages
-   - Verifies XML documentation generation
-   - Validates package contents
-
-2. **Integration Testing**:
-   - Tests full solution build with AzureAdapter
-   - Validates Azure compatibility examples
-   - Ensures project references work correctly
-
-**Artifacts:** Azure Adapter NuGet packages (30-day retention)
-
-## Status Badges
-
-The README.md includes status badges that link to these workflows:
-
-- [![Build and Test](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml)
-- [![Azure Adapter Build](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/azure-adapter.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/azure-adapter.yml)
+- [![Build and Publish](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml)
 
 ## Testing Strategy
 
-The workflows include both build-time and runtime validation:
+The workflow includes comprehensive validation:
 
 ### Build-time Validation:
-- ✅ Code compilation across platforms
-- ✅ NuGet package generation  
-- ✅ XML documentation generation
-- ✅ Project reference resolution
+- ✅ Code compilation and dependency resolution
+- ✅ NuGet package generation with proper metadata
+- ✅ Solution-wide test execution
 
 ### Runtime Validation:
-- ✅ Smoke tests via dedicated test project
-- ✅ Examples project execution tests
-- ✅ Azure compatibility verification
+- ✅ Examples project execution smoke test
+- ✅ Package integrity validation
 
 ## Package Management
 
-Both workflows generate NuGet packages as artifacts:
+The workflow generates NuGet packages for:
+- **Asynkron.DurableFunctions.AzureAdapter**: Azure compatibility layer
 
-- **Main workflow**: Packages on successful builds to `main` branch
-- **Azure Adapter workflow**: Always generates packages for validation
-- **Retention**: 7 days (main), 30 days (Azure Adapter)
-- **Naming**: Descriptive artifact names for easy identification
+**Publishing:**
+- Automatic publishing to NuGet.org on successful builds to `main` branch
+- Requires `NUGET_API_KEY` secret to be configured in repository settings
+- Uses `--skip-duplicate` to avoid errors on version conflicts
+- **Retention**: 30 days for artifact downloads
 
 ## Development Guidelines
 
 When contributing:
 
-1. **Pull Requests**: All workflows run automatically on PRs
-2. **Azure Adapter Changes**: Trigger the specialized Azure Adapter workflow  
-3. **Breaking Changes**: Ensure all platforms pass before merging
-4. **Package Validation**: Review generated packages in workflow artifacts
+1. **Pull Requests**: The workflow runs automatically on all PRs
+2. **Main Branch**: Successful builds trigger NuGet publishing automatically
+3. **Package Validation**: Review generated packages in workflow artifacts before merging
+
+## Configuration
+
+To enable NuGet publishing:
+1. Go to repository Settings > Secrets and variables > Actions
+2. Add a new repository secret named `NUGET_API_KEY`
+3. Set the value to your NuGet.org API key
 
 ## Maintenance
 
-These workflows are designed to be:
-- **Self-contained**: No external dependencies beyond GitHub Actions marketplace
-- **Efficient**: Smart triggering to avoid unnecessary runs
-- **Reliable**: Comprehensive validation across scenarios
-- **Maintainable**: Clear separation of concerns between workflows
+This workflow is designed to be:
+- **Simple**: Single job, single OS, minimal complexity
+- **Fast**: No unnecessary matrix builds or platform testing
+- **Reliable**: Focused on core functionality with proper error handling
+- **Maintainable**: Clear, straightforward configuration
