@@ -1,7 +1,9 @@
 # 🚀 Asynkron.DurableFunctions
 
-[![CI/CD Pipeline](https://github.com/asynkron/Asynkron.DurableFunctions/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions/actions/workflows/ci-cd.yml)
+[![Build and Test](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/build.yml)
+[![Azure Adapter Build](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/azure-adapter.yml/badge.svg)](https://github.com/asynkron/Asynkron.DurableFunctions.Public/actions/workflows/azure-adapter.yml)
 [![NuGet](https://img.shields.io/nuget/v/Asynkron.DurableFunctions.svg)](https://www.nuget.org/packages/Asynkron.DurableFunctions/)
+[![NuGet - Azure Adapter](https://img.shields.io/nuget/v/Asynkron.DurableFunctions.AzureAdapter.svg)](https://www.nuget.org/packages/Asynkron.DurableFunctions.AzureAdapter/)
 [![Downloads](https://img.shields.io/nuget/dt/Asynkron.DurableFunctions.svg)](https://www.nuget.org/packages/Asynkron.DurableFunctions/)
 
 > **A powerful durable orchestration framework with our own API design!**
