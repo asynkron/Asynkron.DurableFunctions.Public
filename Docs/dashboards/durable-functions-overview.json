@@ -1,0 +1,320 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Durable Functions Overview",
+    "tags": ["durable-functions", "orchestration"],
+    "style": "dark",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Orchestrations Today",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "increase(orchestrations_completed_total[24h])",
+            "legendFormat": "Completed"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Success Rate",
+        "type": "gauge",
+        "targets": [
+          {
+            "expr": "rate(orchestrations_completed_total[5m]) / rate(orchestrations_started_total[5m]) * 100",
+            "legendFormat": "Success Rate %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "red",
+                  "value": 0
+                },
+                {
+                  "color": "yellow",
+                  "value": 95
+                },
+                {
+                  "color": "green",
+                  "value": 99
+                }
+              ]
+            },
+            "unit": "percent",
+            "min": 0,
+            "max": 100
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 6,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "Average Duration",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.5, rate(orchestrations_duration_seconds_bucket[5m]))",
+            "legendFormat": "P50"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(orchestrations_duration_seconds_bucket[5m]))",
+            "legendFormat": "P95"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "unit": "s"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 4,
+        "title": "Active Orchestrations",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(orchestrations_active)",
+            "legendFormat": "Active"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 100
+                },
+                {
+                  "color": "red",
+                  "value": 1000
+                }
+              ]
+            },
+            "unit": "short"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 18,
+          "y": 0
+        }
+      },
+      {
+        "id": 5,
+        "title": "Orchestration Trends",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(orchestrations_started_total[1m])",
+            "legendFormat": "Started/min"
+          },
+          {
+            "expr": "rate(orchestrations_completed_total[1m])",
+            "legendFormat": "Completed/min"
+          },
+          {
+            "expr": "rate(orchestrations_failed_total[1m])",
+            "legendFormat": "Failed/min"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Rate (per minute)",
+            "min": 0
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        }
+      },
+      {
+        "id": 6,
+        "title": "Active Orchestrations by Host",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum by (host_id) (orchestrations_active)",
+            "legendFormat": "{{host_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Active Count",
+            "min": 0
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        }
+      },
+      {
+        "id": 7,
+        "title": "Function Call Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(functions_calls_total[1m])",
+            "legendFormat": "Calls/min"
+          },
+          {
+            "expr": "rate(functions_failures_total[1m])",
+            "legendFormat": "Failures/min"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Rate (per minute)",
+            "min": 0
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 17
+        }
+      },
+      {
+        "id": 8,
+        "title": "State Store Latency",
+        "type": "heatmap",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(state_save_duration_seconds_bucket[5m]))",
+            "legendFormat": "Save P95"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(state_load_duration_seconds_bucket[5m]))",
+            "legendFormat": "Load P95"
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 17
+        }
+      },
+      {
+        "id": 9,
+        "title": "Top Failing Orchestrators",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "topk(10, sum by (orchestrator_name) (rate(orchestrations_failed_total[5m])))",
+            "format": "table",
+            "instant": true
+          }
+        ],
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true
+              },
+              "renameByName": {
+                "orchestrator_name": "Orchestrator",
+                "Value": "Failure Rate (per sec)"
+              }
+            }
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 26
+        }
+      },
+      {
+        "id": 10,
+        "title": "Lease Management",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(lease_active_count)",
+            "legendFormat": "Active Leases"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Count",
+            "min": 0
+          }
+        ],
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 26
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s",
+    "version": 1
+  }
+}

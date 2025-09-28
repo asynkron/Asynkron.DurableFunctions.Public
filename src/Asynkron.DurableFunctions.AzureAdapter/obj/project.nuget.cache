@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "idjvS/GfjKc=",
+  "success": true,
+  "projectFilePath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj",
+  "expectedPackageFiles": [
+    "/Users/rogerjohansson/.nuget/packages/jetbrains.annotations/2025.2.2/jetbrains.annotations.2025.2.2.nupkg.sha512",
+    "/Users/rogerjohansson/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/rogerjohansson/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/rogerjohansson/.nuget/packages/microsoft.netcore.app.ref/8.0.19/microsoft.netcore.app.ref.8.0.19.nupkg.sha512",
+    "/Users/rogerjohansson/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.19/microsoft.aspnetcore.app.ref.8.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}

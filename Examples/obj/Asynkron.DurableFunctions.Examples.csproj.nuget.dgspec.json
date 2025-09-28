@@ -1,0 +1,199 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj": {}
+  },
+  "projects": {
+    "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj",
+        "projectName": "Asynkron.DurableFunctions.Examples",
+        "projectPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/Asynkron.DurableFunctions.Examples.csproj",
+        "packagesPath": "/Users/rogerjohansson/.nuget/packages/",
+        "outputPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/examples/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rogerjohansson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj": {
+                "projectPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2025.2.2, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "OpenTelemetry": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.19, 8.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj",
+        "projectName": "Asynkron.DurableFunctions.AzureAdapter",
+        "projectPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/Asynkron.DurableFunctions.AzureAdapter.csproj",
+        "packagesPath": "/Users/rogerjohansson/.nuget/packages/",
+        "outputPath": "/Users/rogerjohansson/git/asynkron/Asynkron.DurableFunctions.Public/src/Asynkron.DurableFunctions.AzureAdapter/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rogerjohansson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2025.2.2, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.19, 8.0.19]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

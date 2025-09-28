@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <!-- XML Documentation Generation -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+        
+        <!-- Always treat missing XML documentation as warnings, never errors -->
+        <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+
+        <!-- NuGet Package Properties -->
+        <PackageId>Asynkron.DurableFunctions.AzureAdapter</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>Asynkron</Authors>
+        <Company>Asynkron</Company>
+        <Description>Azure Durable Functions compatibility layer for Asynkron.DurableFunctions. Provides Azure-compatible attributes and interfaces for drop-in replacement scenarios.</Description>
+        <PackageTags>azure-durable-functions;compatibility;orchestration;workflow;async;asynkron</PackageTags>
+        <PackageProjectUrl>https://github.com/asynkron/Asynkron.DurableFunctions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/asynkron/Asynkron.DurableFunctions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../Asynkron.DurableFunctions/Asynkron.DurableFunctions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2025.2.2"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" Condition="Exists('README.md')"/>
+    </ItemGroup>
+
+</Project>

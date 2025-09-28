@@ -1,0 +1,9 @@
+- name: Home
+  href: ../README.md
+- name: API Documentation
+  href: api/
+  homepage: api/index.md
+- name: Examples
+  href: ../examples/
+- name: GitHub
+  href: https://github.com/asynkron/Asynkron.DurableFunctions

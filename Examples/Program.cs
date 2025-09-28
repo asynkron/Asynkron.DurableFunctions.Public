@@ -1,98 +1,63 @@
-using Examples;
+using System.Linq;
 
-namespace Examples;
+namespace Asynkron.DurableFunctions.Examples;
 
-/// <summary>
-/// Main program to run all Asynkron.DurableFunctions examples
-/// </summary>
-class Program
+internal class Program
 {
-    static async Task Main(string[] args)
+    private static async Task Main(string[] args)
     {
-        Console.WriteLine("🚀 Asynkron.DurableFunctions Examples");
-        Console.WriteLine("=====================================");
-        
-        if (args.Length == 0)
+        if (await TryHandleCommandLineAsync(args))
         {
-            ShowHelp();
             return;
         }
 
-        var example = args[0].ToLowerInvariant();
+        Console.WriteLine("Asynkron.DurableFunctions - Examples");
+        Console.WriteLine("====================================\n");
 
         try
         {
-            switch (example)
-            {
-                case "hello":
-                case "helloworld":
-                    Console.WriteLine("\n📝 Running Hello World Example...\n");
-                    await HelloWorldExample.Run();
-                    break;
+            // Run the Core vs Azure Adapter comparison example FIRST
+            await CoreVsAzureAdapterExample.RunExample();
 
-                case "sequential":
-                case "workflow":
-                    Console.WriteLine("\n🔄 Running Sequential Workflow Example...\n");
-                    await SequentialWorkflowExample.Run();
-                    break;
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-                case "parallel":
-                case "fanout":
-                    Console.WriteLine("\n⚡ Running Parallel Processing Example...\n");
-                    await ParallelProcessingExample.Run();
-                    break;
+            // Run the original function call state example
+            await FunctionCallStateExample.RunExample();
 
-                case "timers":
-                case "durable":
-                    Console.WriteLine("\n⏰ Running Durable Timers Example...\n");
-                    await DurableTimersExample.Run();
-                    break;
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-                case "approval":
-                case "human":
-                    Console.WriteLine("\n👥 Running Human Approval Example...\n");
-                    await HumanApprovalExample.Run();
-                    break;
+            // Run the new auto-registration example
+            await AutoRegistrationExample.RunExample();
 
-                case "error":
-                case "resilient":
-                    Console.WriteLine("\n🛡️ Running Error Handling Example...\n");
-                    await ErrorHandlingExample.Run();
-                    break;
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-                case "sub":
-                case "orchestrations":
-                    Console.WriteLine("\n🎭 Running Sub-Orchestrations Example...\n");
-                    await SubOrchestrationsExample.Run();
-                    break;
+            // Run the new typed orchestrator example
+            await TypedOrchestratorExample.RunExample();
 
-                case "pipeline":
-                case "data":
-                    Console.WriteLine("\n📊 Running Data Pipeline Example...\n");
-                    await DataPipelineExample.Run();
-                    break;
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-                case "eternal":
-                case "monitor":
-                    Console.WriteLine("\n♾️ Running Eternal Orchestrations Example...\n");
-                    await EternalOrchestrationsExample.Run();
-                    break;
+            // Run the SQLite StateStore example
+            await SqliteExample.RunExample();
 
-                case "azure":
-                case "compatibility":
-                    Console.WriteLine("\n☁️ Running Azure Compatibility Example...\n");
-                    await AzureCompatibilityExample.Run();
-                    break;
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
 
-                case "all":
-                    await RunAllExamples();
-                    break;
+            // Run the new Disposable Lease example
+            await DisposableLeaseExample.RunExample();
 
-                default:
-                    Console.WriteLine($"❌ Unknown example: {example}");
-                    ShowHelp();
-                    break;
-            }
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
+
+            // Run the Azure compatibility example
+            await AzureCompatibilityExample.RunExample();
+
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
+
+            // Run the new orchestration client example
+            await OrchestrationClientExample.RunExample();
+
+            Console.WriteLine("\n" + new string('=', 50) + "\n");
+
+            // Run the chaos engineering example
+            await ChaosEngineeringExample.RunAsync();
         }
         catch (Exception ex)
         {
@@ -100,67 +65,44 @@ class Program
             Console.WriteLine(ex.StackTrace);
         }
 
-        Console.WriteLine("\n✅ Example completed!");
+        WaitForExitIfInteractive();
     }
 
-    static void ShowHelp()
+    private static async Task<bool> TryHandleCommandLineAsync(string[] args)
     {
-        Console.WriteLine("\nAvailable examples:");
-        Console.WriteLine("  hello          - Hello World (simplest example)");
-        Console.WriteLine("  sequential     - Sequential workflow processing");
-        Console.WriteLine("  parallel       - Parallel processing (fan-out/fan-in)");
-        Console.WriteLine("  timers         - Durable timers and delays");
-        Console.WriteLine("  approval       - Human approval workflows");
-        Console.WriteLine("  error          - Error handling and retry patterns");
-        Console.WriteLine("  sub            - Sub-orchestrations");
-        Console.WriteLine("  pipeline       - Data pipeline processing");
-        Console.WriteLine("  eternal        - Eternal orchestrations (monitoring)");
-        Console.WriteLine("  azure          - Azure compatibility example");
-        Console.WriteLine("  all            - Run all examples");
-        Console.WriteLine("\nUsage:");
-        Console.WriteLine("  dotnet run hello");
-        Console.WriteLine("  dotnet run sequential");
-        Console.WriteLine("  dotnet run all");
+        if (args.Length == 0)
+        {
+            return false;
+        }
+
+        var mode = args[0];
+        switch (mode.ToLowerInvariant())
+        {
+            case "postgresql":
+            case "postgresql-api":
+                Console.WriteLine("🐘 Running PostgreSQL Web API Example");
+                await WebApiPostgreSqlExample.RunAsync(args.Skip(1).ToArray());
+                return true;
+            case "postgresql-cli":
+                Console.WriteLine("🐘 Running PostgreSQL Console Example");
+                await PostgreSqlExample.RunAsync();
+                return true;
+            case "otel":
+            case "otel-collector":
+                Console.WriteLine("🎯 Running OpenTelemetry collector sample");
+                await OpenTelemetryCollectorExample.RunAsync(args.Skip(1).ToArray());
+                return true;
+            default:
+                return false;
+        }
     }
 
-    static async Task RunAllExamples()
+    private static void WaitForExitIfInteractive()
     {
-        var examples = new[]
+        if (!Console.IsInputRedirected)
         {
-            ("Hello World", (Func<Task>)HelloWorldExample.Run),
-            ("Sequential Workflow", SequentialWorkflowExample.Run),
-            ("Parallel Processing", ParallelProcessingExample.Run),
-            ("Data Pipeline", DataPipelineExample.Run),
-            ("Durable Timers", DurableTimersExample.Run),
-            ("Human Approval", HumanApprovalExample.Run),
-            ("Error Handling", ErrorHandlingExample.Run),
-            ("Sub-Orchestrations", SubOrchestrationsExample.Run),
-            ("Eternal Orchestrations", EternalOrchestrationsExample.Run),
-            ("Azure Compatibility", AzureCompatibilityExample.Run)
-        };
-
-        Console.WriteLine($"🎯 Running all {examples.Length} examples in sequence...\n");
-
-        for (int i = 0; i < examples.Length; i++)
-        {
-            var (name, runner) = examples[i];
-            Console.WriteLine($"[{i + 1}/{examples.Length}] 🚀 Running {name} Example...");
-            
-            try
-            {
-                await runner();
-                Console.WriteLine($"✅ {name} completed successfully!\n");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ {name} failed: {ex.Message}\n");
-            }
-
-            // Small delay between examples
-            if (i < examples.Length - 1)
-            {
-                await Task.Delay(2000);
-            }
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
         }
     }
 }
