@@ -29,15 +29,19 @@ public class DurableFunctionDemo
         Console.WriteLine();
 
         // Register some example functions
-        runtime.RegisterJsonFunction("SayHello", (_, input) =>
+        runtime.RegisterJsonFunction("SayHello", (context, input) =>
         {
+            var logger = context.GetLogger();
             var name = input.ToString();
+            logger.LogInformation("Activity SayHello executing for {Name}, instance {InstanceId}", name, context.InstanceId);
             Console.WriteLine($"Hello, {name}!");
             return Task.FromResult<string>($"Greeted {name}");
         });
 
-        runtime.RegisterJsonFunction("CalculateSum", (_, input) =>
+        runtime.RegisterJsonFunction("CalculateSum", (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("Activity CalculateSum executing for instance {InstanceId}", context.InstanceId);
             var i = JsonSerializer.Deserialize<object>(input);
             if (i is JsonElement jsonElement)
             {

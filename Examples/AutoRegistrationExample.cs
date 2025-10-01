@@ -99,6 +99,9 @@ public class EcommerceOrchestrationFunctions
         [FunctionTrigger] OrderProcessingRequest request,
         FunctionContext executionContext)
     {
+        var logger = executionContext.GetLogger();
+        logger.LogInformation("Getting orchestration input for request: {RequestId}, instance: {InstanceId}", 
+            request.RequestId, executionContext.InstanceId);
         Console.WriteLine($"🔧 Getting orchestration input for request: {request.RequestId}");
 
         // Simulate some processing
@@ -117,8 +120,13 @@ public class EcommerceOrchestrationFunctions
     /// This demonstrates the core API pattern with [Function] and [FunctionTrigger] attributes.
     /// </summary>
     [Function("ProcessEcommerceOrder")]
-    public async Task<string> ProcessEcommerceOrder([FunctionTrigger] OrderProcessingRequest request)
+    public async Task<string> ProcessEcommerceOrder(
+        [FunctionTrigger] OrderProcessingRequest request,
+        FunctionContext executionContext)
     {
+        var logger = executionContext.GetLogger();
+        logger.LogInformation("Processing e-commerce order: {RequestId}, instance: {InstanceId}", 
+            request.RequestId, executionContext.InstanceId);
         Console.WriteLine($"🔧 Processing e-commerce order: {request.RequestId}");
 
         // Simulate order processing

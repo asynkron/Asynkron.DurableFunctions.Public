@@ -36,29 +36,37 @@ public static class FunctionCallStateExample
         var runtime = new DurableFunctionRuntime(stateStore, logger, loggerFactory: loggerFactory);
 
         // Register activities F1, F2, F3, F4
-        runtime.RegisterJsonFunction("F1", async (_, input) =>
+        runtime.RegisterJsonFunction("F1", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("F1 executing with input: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"🔧 F1 executing with input: {input}");
             await Task.Delay(100); // Simulate work
             return "Result from F1";
         });
 
-        runtime.RegisterJsonFunction("F2", async (_, input) =>
+        runtime.RegisterJsonFunction("F2", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("F2 executing with input: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"🔧 F2 executing with input: {input}");
             await Task.Delay(100); // Simulate work
             return $"Result from F2 (processed {input})";
         });
 
-        runtime.RegisterJsonFunction("F3", async (_, input) =>
+        runtime.RegisterJsonFunction("F3", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("F3 executing with input: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"🔧 F3 executing with input: {input}");
             await Task.Delay(100); // Simulate work
             return $"Result from F3 (processed {input})";
         });
 
-        runtime.RegisterJsonFunction("F4", async (_, input) =>
+        runtime.RegisterJsonFunction("F4", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("F4 executing with input: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"🔧 F4 executing with input: {input}");
             await Task.Delay(100); // Simulate work
             return $"FINAL: {input}";
