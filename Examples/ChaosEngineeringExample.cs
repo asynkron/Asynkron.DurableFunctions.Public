@@ -42,6 +42,8 @@ public static class ChaosEngineeringExample
         // Register functions that might fail
         runtime.RegisterJsonFunction("ProcessPayment", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("Processing payment: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"💳 Processing payment: {input}");
             await Task.Delay(100); // Simulate processing time
             return $"Payment processed: {input}";
@@ -49,6 +51,8 @@ public static class ChaosEngineeringExample
 
         runtime.RegisterJsonFunction("SendNotification", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("Sending notification: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"📧 Sending notification: {input}");
             await Task.Delay(50); // Simulate network delay
             return $"Notification sent: {input}";
@@ -56,6 +60,8 @@ public static class ChaosEngineeringExample
 
         runtime.RegisterJsonFunction("UpdateInventory", async (context, input) =>
         {
+            var logger = context.GetLogger();
+            logger.LogInformation("Updating inventory: {Input} for instance {InstanceId}", input, context.InstanceId);
             Console.WriteLine($"📦 Updating inventory: {input}");
             await Task.Delay(80); // Simulate database operation
             return $"Inventory updated: {input}";

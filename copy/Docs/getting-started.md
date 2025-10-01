@@ -99,6 +99,8 @@ runtime.RegisterFunction<InputType, OutputType>("FunctionName", async input =>
 });
 ```
 
+**💡 Tip:** Activity functions can also receive an `IFunctionContext` parameter for logging and accessing instance information. See [Activity Functions](activities.md) for more details.
+
 ### 4. Orchestrator Functions
 Orchestrators coordinate the workflow:
 

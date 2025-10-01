@@ -153,6 +153,7 @@ public static class OrchestrationClientExample
         // Simple activity function (registered as a regular function)
         runtime.RegisterJsonFunction("SayHelloActivity", (context, input) =>
         {
+            var logger = context.GetLogger();
             // Input is a JSON string, so we need to parse it
             var name = "World";
             if (!string.IsNullOrEmpty(input))
@@ -161,6 +162,7 @@ public static class OrchestrationClientExample
                 name = input.Trim('"');
             }
             var message = $"Hello, {name}! (from activity)";
+            logger.LogInformation("Activity SayHelloActivity executing: {Message} for instance {InstanceId}", message, context.InstanceId);
             Console.WriteLine($"Activity executed: {message}");
             return Task.FromResult($"\"{message}\""); // Return as JSON string
         });

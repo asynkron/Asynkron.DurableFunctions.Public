@@ -82,6 +82,8 @@ catch (Exception ex)
 }
 ```
 
+**Note**: Activity functions can also access a `IFunctionContext` parameter to get logging and instance information. See [Activity Functions](activities.md) for details on implementing activities.
+
 ### Creating Durable Timers
 ```csharp
 // Wait for a specific duration
